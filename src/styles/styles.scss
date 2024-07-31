@@ -1,21 +1,17 @@
-@import 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap';
-@import 'https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300..700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap';
 @import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200';
 
 :root {
-  // Colors
-  --shark:  #282829;
-  --gray: #C8C8C8;
-
   // Variables
   --primary: #17171D;
-  --background: #E2E2E2;
   --secondary: #EFEFEF;
   --tertiary: #EAEAEA;
+  --background: #E2E2E2;
   --border: #D2D2D2;
+  --border-hover: #c0c0c0;
   --text-primary: #17171D;
   --text-secondary: #5F5F5F;
-  --error: #F00;
+  --white: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -51,7 +47,7 @@ body {
   * {
     box-sizing: border-box;
     color: var(--text-primary);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: Roboto, sans-serif;
   }
 }
 
@@ -59,10 +55,6 @@ button {
   border: none;
   background: none;
   cursor: pointer;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Cormorant Infant', sans-serif;
 }
 
 h1 {
@@ -82,14 +74,20 @@ label {
   font-size: .75rem;
   font-weight: 300;
   margin-block-end: 1rem;
+  text-transform: uppercase;
+}
 
-  @media (width <= 64rem) {
-    font-size: .6875rem;
-  }
+input {
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  line-height: 1;
+  outline: none;
+}
 
-  @media (width <= 37.5rem) {
-    font-size: .625rem;
-  }
+ul {
+  padding: 0;
+  list-style-type: none;
 }
 
 .material-symbols-outlined {

@@ -12,8 +12,6 @@ npm run test
 
 ## Instructions
 
-First the project.
-
-To visualize the project open it in `http://localhost:5173`
+First run the project. To visualize the project open it in `http://localhost:5173`
 
 Project developed by Juan Camilo Isaza.

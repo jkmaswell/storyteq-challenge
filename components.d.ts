@@ -17,6 +17,7 @@ declare module 'vue' {
     PersonCard: typeof import('./src/components/PersonCard/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchInput: typeof import('./src/components/SearchInput/index.vue')['default']
     SideNav: typeof import('./src/components/SideNav/index.vue')['default']
     TopBar: typeof import('./src/components/TopBar/index.vue')['default']
   }
