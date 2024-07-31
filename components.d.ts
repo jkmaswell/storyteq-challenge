@@ -7,18 +7,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    ContactItem: typeof import('./src/components/PeopleTable/ContactItem.vue')['default']
-    DefaultLayout: typeof import('./src/components/DefaultLayout/index.vue')['default']
-    ItemCard: typeof import('./src/components/ItemCard/index.vue')['default']
-    Layout: typeof import('./src/components/layout/index.vue')['default']
-    MenuItem: typeof import('./src/components/SideNav/MenuItem.vue')['default']
-    MobileNavbar: typeof import('./src/components/MobileNavbar/index.vue')['default']
-    PeopleTable: typeof import('./src/components/PeopleTable/index.vue')['default']
-    PersonCard: typeof import('./src/components/PersonCard/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchInput: typeof import('./src/components/SearchInput/index.vue')['default']
-    SideNav: typeof import('./src/components/SideNav/index.vue')['default']
-    TopBar: typeof import('./src/components/TopBar/index.vue')['default']
   }
 }
