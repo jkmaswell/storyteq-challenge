@@ -1,0 +1,183 @@
+{
+  "venues": [
+    {
+      "id": "1100",
+      "name": "Venue People",
+      "color": "#FFC9C9",
+      "teams": [
+        "1",
+        "2",
+        "3"
+      ],
+      "contacts": [
+        "1000",
+        "1001",
+        "1002",
+        "1003",
+        "1004"
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": "1000",
+      "fullName": "Staffy de Nielden Two",
+      "displayName": "Staffy",
+      "initials": "SN",
+      "role": "Singer",
+      "email": "staff_1@venue.com",
+      "phoneNumber": "68872901",
+      "phoneCountryPrefix": "+31",
+      "teamIds": [
+        "1",
+        "2",
+        "3"
+      ],
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8bXXlgCBVRH1uLmaHZJ4qXyy_QiTCvLlOhw&s",
+      "address": {
+        "id": "1",
+        "addressLineOne": "Fake Street 1",
+        "addressLineTwo": "Apt up",
+        "city": "Amsterdam",
+        "country": "NL",
+        "postalCode": "1010TD",
+        "state": null
+      },
+      "isEmployee": true,
+      "functionName": "1st Chef",
+      "userPermissions": []
+    },
+    {
+      "id": "1001",
+      "fullName": "Staffy de Nielden",
+      "displayName": "Staffy",
+      "initials": "SN",
+      "role": "Accountant",
+      "email": "staff_1@venue.com",
+      "phoneNumber": "68872901",
+      "phoneCountryPrefix": "+31",
+      "teamIds": [
+        "1",
+        "2",
+        "3"
+      ],
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8bXXlgCBVRH1uLmaHZJ4qXyy_QiTCvLlOhw&s",
+      "address": {
+        "id": "1",
+        "addressLineOne": "Fake Street 1",
+        "addressLineTwo": "Apt up",
+        "city": "Amsterdam",
+        "country": "NL",
+        "postalCode": "1010TD",
+        "state": null
+      },
+      "isEmployee": true,
+      "functionName": "1st Chef",
+      "userPermissions": []
+    },
+    {
+      "id": "1002",
+      "fullName": "Staffy de Nielden",
+      "displayName": "Staffy",
+      "initials": "SN",
+      "role": "Accountant",
+      "email": "staff_1@venue.com",
+      "phoneNumber": "68872901",
+      "phoneCountryPrefix": "+31",
+      "teamIds": [
+        "1",
+        "2"
+      ],
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8bXXlgCBVRH1uLmaHZJ4qXyy_QiTCvLlOhw&s",
+      "address": {
+        "id": "1",
+        "addressLineOne": "Fake Street 1",
+        "addressLineTwo": "Apt up",
+        "city": "Amsterdam",
+        "country": "NL",
+        "postalCode": "1010TD",
+        "state": null
+      },
+      "isEmployee": true,
+      "functionName": "1st Chef",
+      "userPermissions": []
+    },
+    {
+      "id": "1003",
+      "fullName": "Staffy de Nielden",
+      "displayName": "Staffy",
+      "initials": "SN",
+      "role": "Accountant",
+      "email": "staff_1@venue.com",
+      "phoneNumber": "68872901",
+      "phoneCountryPrefix": "+31",
+      "teamIds": [
+        "1"
+      ],
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8bXXlgCBVRH1uLmaHZJ4qXyy_QiTCvLlOhw&s",
+      "address": {
+        "id": "1",
+        "addressLineOne": "Fake Street 1",
+        "addressLineTwo": "Apt up",
+        "city": "Amsterdam",
+        "country": "NL",
+        "postalCode": "1010TD",
+        "state": null
+      },
+      "isEmployee": true,
+      "functionName": "1st Chef",
+      "userPermissions": []
+    },
+    {
+      "id": "1004",
+      "fullName": "Staffy de Nielden",
+      "displayName": "Staffy",
+      "initials": "SN",
+      "role": "Accountant",
+      "email": "staff_1@venue.com",
+      "phoneNumber": "68872901",
+      "phoneCountryPrefix": "+31",
+      "teamIds": [
+        "1",
+        "2",
+        "3"
+      ],
+      "image": "https://e7.pngegg.com/pngimages/122/453/png-clipart-computer-icons-user-profile-avatar-female-profile-heroes-head.png",
+      "address": {
+        "id": 1,
+        "addressLineOne": "Fake Street 1",
+        "addressLineTwo": "Apt up",
+        "city": "Amsterdam",
+        "country": "NL",
+        "postalCode": "1010TD",
+        "state": null
+      },
+      "isEmployee": true,
+      "functionName": "1st Chef",
+      "userPermissions": []
+    }
+  ],
+  "teams": [
+    {
+      "id": "1",
+      "name": "Management",
+      "color": "#FFC9C9",
+      "abbreviation": "M",
+      "teamPermissions": []
+    },
+    {
+      "id": "2",
+      "name": "Front of the house",
+      "color": "#A5A4D4",
+      "abbreviation": "F",
+      "teamPermissions": []
+    },
+    {
+      "id": "3",
+      "name": "Back of the house",
+      "color": "#C1E0B9",
+      "abbreviation": "B",
+      "teamPermissions": []
+    }
+  ]
+}
