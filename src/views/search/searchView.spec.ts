@@ -146,4 +146,31 @@ describe('SearchView', () => {
 
     expect(searchStore.selectBook).toHaveBeenCalledWith({ title: 'Don Quixote', author: 'Miguel De Cervantes' })
   })
+
+  it('displays selected cities', () => {
+    const searchStore = useSearchStore()
+
+    searchStore.selectedCities = ['san jose', 'san francisco']
+
+    const wrapper = mount(SearchView)
+
+    const selectedCities = wrapper.findAll('#city-list .search-list__item')
+
+    expect(selectedCities.length).toBe(2)
+    expect(selectedCities[0].text()).toBe('san jose')
+    expect(selectedCities[1].text()).toBe('san francisco')
+  })
+
+  it('displays selected books', () => {
+    const searchStore = useSearchStore()
+
+    searchStore.selectedBooks = [{ title: 'Don Quixote', author: 'Miguel De Cervantes' }]
+
+    const wrapper = mount(SearchView)
+
+    const selectedBooks = wrapper.findAll('#book-list .search-list__item')
+
+    expect(selectedBooks.length).toBe(1)
+    expect(selectedBooks[0].text()).toBe('Don Quixote - Miguel De Cervantes')
+  })
 })

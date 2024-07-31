@@ -54,6 +54,7 @@ onMounted(() => {
         </template>
       </SearchInput>
       <SearchList
+        id="city-list"
         :list="selectedCities"
         label="Selected Cities"
         no-selected-placeholder="No cities selected"
@@ -77,6 +78,7 @@ onMounted(() => {
         </template>
       </SearchInput>
       <SearchList
+        id="book-list"
         :list="selectedBooks"
         label="Selected Books"
         no-selected-placeholder="No books selected"

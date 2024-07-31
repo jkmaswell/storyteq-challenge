@@ -12,10 +12,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div
-    v-bind="$attrs"
-    class="search-list"
-  >
+  <div class="search-list">
     <label class="search-list__label">
       {{ props.label }}
     </label>
