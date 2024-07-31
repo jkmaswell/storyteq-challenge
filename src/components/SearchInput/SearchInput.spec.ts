@@ -1,61 +1,92 @@
 import { mount } from '@vue/test-utils'
-import { createPinia, setActivePinia } from 'pinia'
+import { describe, expect, it } from 'vitest'
 import SearchInput from './index.vue'
 
 describe('SearchInput', () => {
-  beforeEach(() => {
-    setActivePinia(createPinia())
+  it('renders the search input and placeholder correctly', () => {
+    const wrapper = mount(SearchInput, {
+      props: {
+        label: 'Search Cities',
+        placeholder: 'Type at least 3 characters',
+        results: [],
+      },
+    })
+
+    const input = wrapper.find('input')
+
+    expect(input.element.placeholder).toBe('Type at least 3 characters')
   })
 
-  it('displays a message when less than 3 characters are typed in the city search input', async () => {
-    const wrapper = mount(SearchInput)
-    const input = wrapper.find('#city-search')
+  it('emits an input event when typing in the search input', async () => {
+    const wrapper = mount(SearchInput, {
+      props: {
+        label: 'Search Cities',
+        placeholder: 'Type at least 3 characters',
+        results: [],
+      },
+    })
 
-    await input.setValue('sa')
-    expect(wrapper.text()).toContain('Please type at least 3 characters')
-  })
-
-  it('displays city results when 3 or more characters are typed in the city search input', async () => {
-    const wrapper = mount(SearchInput)
-    const input = wrapper.find('#city-search')
+    const input = wrapper.find('input')
 
     await input.setValue('san')
-    expect(wrapper.text()).toContain('san jose')
-    expect(wrapper.text()).toContain('santiago')
-    expect(wrapper.text()).toContain('san francisco')
+    expect(wrapper.emitted().input[0]).toEqual(['san'])
   })
 
-  it('displays a message when no book results are found', async () => {
-    const wrapper = mount(SearchInput)
-    const input = wrapper.find('#book-search')
+  it('displays results when there are search matches', async () => {
+    const results = ['san jose', 'san francisco', 'santa rosa']
+
+    const wrapper = mount(SearchInput, {
+      props: {
+        label: 'Search Cities',
+        placeholder: 'Type at least 3 characters',
+        results,
+      },
+    })
+
+    const input = wrapper.find('input')
+
+    await input.setValue('san')
+    
+    const resultItems = wrapper.findAll('.search__result__item')
+
+    expect(resultItems.length).toBe(3)
+  })
+
+  it('displays "No results found" when there are no matches', async () => {
+    const wrapper = mount(SearchInput, {
+      props: {
+        label: 'Search Cities',
+        placeholder: 'Type at least 3 characters',
+        results: [],
+      },
+    })
+
+    const input = wrapper.find('input')
 
     await input.setValue('zzz')
+    
     expect(wrapper.text()).toContain('No results found')
   })
 
-  it('adds a city to the selected cities list when a city is clicked', async () => {
-    const wrapper = mount(SearchInput)
-    const input = wrapper.find('#city-search')
+  it('emits a select event when a result is clicked', async () => {
+    const results = ['san jose', 'san francisco']
+
+    const wrapper = mount(SearchInput, {
+      props: {
+        label: 'Search Cities',
+        placeholder: 'Type at least 3 characters',
+        results,
+      },
+    })
+
+    const input = wrapper.find('input')
 
     await input.setValue('san')
+    
+    const resultItems = wrapper.findAll('.search__result__item')
 
-    const city = wrapper.find('li')
-
-    await city.trigger('click')
-    expect(wrapper.text()).toContain('Selected Cities')
-    expect(wrapper.text()).toContain('san jose')
-  })
-
-  it('adds a book to the selected books list when a book is clicked', async () => {
-    const wrapper = mount(SearchInput)
-    const input = wrapper.find('#book-search')
-
-    await input.setValue('don')
-
-    const book = wrapper.find('li')
-
-    await book.trigger('click')
-    expect(wrapper.text()).toContain('Selected Books')
-    expect(wrapper.text()).toContain('Don Quixote - Miguel De Cervantes')
+    await resultItems[0].trigger('click')
+    
+    expect(wrapper.emitted().select[0]).toEqual(['san jose'])
   })
 })

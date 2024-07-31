@@ -10,7 +10,7 @@ const searchStore = useSearchStore()
 const { cityResults, bookResults, selectedCities, selectedBooks } = storeToRefs(searchStore)
 
 // Refs
-const cityInput = ref<HTMLInputElement | null>(null)
+const cityInput = ref<HTMLElement | null>(null)
 
 // Methods
 const onCityInput = (query: string) => {
@@ -32,7 +32,7 @@ const selectBook = (book: Book) => {
 // Hooks
 onMounted(() => {
   if (cityInput.value) {
-    cityInput.value.focus()
+    (cityInput.value as HTMLInputElement).focus()
   }
 })
 </script>
@@ -41,6 +41,8 @@ onMounted(() => {
   <div class="search-view">
     <div class="search-view__container">
       <SearchInput
+        id="city-input"
+        ref="cityInput"
         :results="cityResults"
         label="Search Cities"
         placeholder="Please type at least 3 characters"
@@ -51,7 +53,10 @@ onMounted(() => {
           {{ item }}
         </template>
       </SearchInput>
-      <div class="search-view__result-list">
+      <div
+        id="city-selection"
+        class="search-view__result-list"
+      >
         <label class="search-view__result-list__label">Selected Cities</label>
         <ul class="search-view__result-list__table">
           <li
@@ -72,6 +77,7 @@ onMounted(() => {
     </div>
     <div class="search-view__container">
       <SearchInput
+        id="book-input"
         :results="bookResults"
         label="Search Books"
         placeholder="Please type at least 3 characters"
@@ -82,7 +88,10 @@ onMounted(() => {
           {{ item.title }} - {{ item.author }}
         </template>
       </SearchInput>
-      <div class="search-view__result-list">
+      <div
+        id="book-selection"
+        class="search-view__result-list"
+      >
         <label class="search-view__result-list__label">Selected Books</label>
         <ul class="search-view__result-list__table">
           <li

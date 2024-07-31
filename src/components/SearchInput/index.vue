@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 
 interface Props {
   label: string
@@ -27,6 +27,10 @@ const searchInput = ref<HTMLInputElement | null>(null)
 const query = ref<string>('')
 
 // Methods
+const focus = () => {
+  searchInput.value?.focus()
+}
+
 const onSearchInput = () => {
   emit('input', query.value)
 }
@@ -36,15 +40,8 @@ const selectItem = (item: string | { title: string; author: string}) => {
   query.value = ''
 }
 
-// Hooks
-onMounted(() => {
-  if (searchInput.value) {
-    searchInput.value.focus()
-  }
-})
-
 defineExpose({
-  searchInput,
+  focus,
 })
 </script>
 
