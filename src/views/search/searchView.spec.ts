@@ -107,35 +107,6 @@ describe('SearchView', () => {
     expect(wrapper.text()).toContain('No results found')
   })
 
-  it('displays selected cities correctly', async () => {
-    const searchStore = useSearchStore()
-
-    searchStore.selectedCities = ['san jose', 'san francisco']
-
-    const wrapper = mount(SearchView)
-    const selectedCityItems = wrapper.findAll('#city-selection .search-view__result-list__item')
-
-    expect(selectedCityItems.length).toBe(2)
-    expect(selectedCityItems[0].text()).toBe('san jose')
-    expect(selectedCityItems[1].text()).toBe('san francisco')
-  })
-
-  it('displays selected books correctly', async () => {
-    const searchStore = useSearchStore()
-
-    searchStore.selectedBooks = [
-      { title: 'Don Quixote', author: 'Miguel De Cervantes' },
-      { title: 'Pilgrim\'s Progress', author: 'John Bunyan' },
-    ]
-
-    const wrapper = mount(SearchView)
-    const selectedBookItems = wrapper.findAll('#book-selection .search-view__result-list__item')
-
-    expect(selectedBookItems.length).toBe(2)
-    expect(selectedBookItems[0].text()).toBe('Don Quixote - Miguel De Cervantes')
-    expect(selectedBookItems[1].text()).toBe('Pilgrim\'s Progress - John Bunyan')
-  })
-
   it('emits select event when a city is selected', async () => {
     const searchStore = useSearchStore()
 

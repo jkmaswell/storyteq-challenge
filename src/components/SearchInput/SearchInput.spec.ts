@@ -41,6 +41,9 @@ describe('SearchInput', () => {
         placeholder: 'Type at least 3 characters',
         results,
       },
+      slots: {
+        result: '<template #item="{ item }">{{ item }}</template>',
+      },
     })
 
     const input = wrapper.find('input')
@@ -50,6 +53,9 @@ describe('SearchInput', () => {
     const resultItems = wrapper.findAll('.search__result__item')
 
     expect(resultItems.length).toBe(3)
+    expect(resultItems[0].text()).toBe('san jose')
+    expect(resultItems[1].text()).toBe('san francisco')
+    expect(resultItems[2].text()).toBe('santa rosa')
   })
 
   it('displays "No results found" when there are no matches', async () => {

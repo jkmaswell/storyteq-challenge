@@ -53,27 +53,15 @@ onMounted(() => {
           {{ item }}
         </template>
       </SearchInput>
-      <div
-        id="city-selection"
-        class="search-view__result-list"
+      <SearchList
+        :list="selectedCities"
+        label="Selected Cities"
+        no-selected-placeholder="No cities selected"
       >
-        <label class="search-view__result-list__label">Selected Cities</label>
-        <ul class="search-view__result-list__table">
-          <li
-            v-if="selectedCities.length === 0"
-            class="search-view__result-list__item"
-          >
-            No cities selected
-          </li>
-          <li
-            v-for="city in selectedCities"
-            :key="city"
-            class="search-view__result-list__item"
-          >
-            {{ city }}
-          </li>
-        </ul>
-      </div>
+        <template #item="{item}">
+          {{ item }}
+        </template>
+      </SearchList>
     </div>
     <div class="search-view__container">
       <SearchInput
@@ -88,27 +76,15 @@ onMounted(() => {
           {{ item.title }} - {{ item.author }}
         </template>
       </SearchInput>
-      <div
-        id="book-selection"
-        class="search-view__result-list"
+      <SearchList
+        :list="selectedBooks"
+        label="Selected Books"
+        no-selected-placeholder="No books selected"
       >
-        <label class="search-view__result-list__label">Selected Books</label>
-        <ul class="search-view__result-list__table">
-          <li
-            v-if="selectedBooks.length === 0"
-            class="search-view__result-list__item"
-          >
-            No books selected
-          </li>
-          <li
-            v-for="book in selectedBooks"
-            :key="book.title"
-            class="search-view__result-list__item"
-          >
-            {{ book.title }} - {{ book.author }}
-          </li>
-        </ul>
-      </div>
+        <template #item="{item}">
+          {{ item.title }} - {{ item.author }}
+        </template>
+      </SearchList>
     </div>
   </div>
 </template>
@@ -118,33 +94,6 @@ onMounted(() => {
   // Container
   &__container {
     margin-block: 5rem;
-  }
-
-  // Result list
-  &__result-list {
-    &__item {
-      padding-block: 0.5rem;
-      padding-inline: 1rem;
-      text-transform: capitalize;
-
-      &:not(:last-child) {
-        border-block-end: .0625rem solid var(--border-hover);
-      }
-    }
-
-    &__label {
-      margin-block-start: 1rem;
-    }
-
-    &__table {
-      border: .0625rem solid var(--border);
-      border-radius: .5rem;
-    }
-  }
-
-  // Not found
-  &__not-found {
-    padding: 1rem;
   }
 }
 </style>
